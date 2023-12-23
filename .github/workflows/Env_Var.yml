@@ -24,7 +24,6 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Print values of env variables
-        run: echo Hello, world!
         run: |
           echo "$Greeting $DAY_OF_WRRK $testvar Add other actions to build"
           echo "testvar  ${{ env.testvar }}"
