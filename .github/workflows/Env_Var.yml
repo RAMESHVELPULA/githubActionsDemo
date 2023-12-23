@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: ENV Variables.
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  DAY_OF_WRRK: Funday
+  testvar: Value-1
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build-app:
+    # The type of runner that the job will run on
+    name: Testing env variables.
+    runs-on: ubuntu-latest
+    env:
+      Greeting: "Hello Dear"
+      testvar: Value - 2
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a single command using the runners shell
+      - name: Print values of env variables
+        run: echo Hello, world!
+        run: |
+          echo "$Greeting $DAY_OF_WRRK $testvar Add other actions to build"
+          echo "testvar  ${{ env.testvar }}"
+          
+
+
